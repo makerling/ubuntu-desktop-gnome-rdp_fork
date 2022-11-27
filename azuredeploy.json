@@ -25,6 +25,7 @@
         "type": "string",
         "defaultValue": "20.04-LTS",
         "allowedValues": [
+          "18.04-LTS",
           "20.04-LTS"
         ],
         "metadata": {
