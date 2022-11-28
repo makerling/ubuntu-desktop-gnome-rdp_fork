@@ -33,6 +33,8 @@ sudo apt-get install -q=2  --no-install-recommends -m ubuntu-mate-core
 
 sudo apt-get install -q=2  --no-install-recommends -m ubuntu-mate-desktop
 
+sudo apt-get install -q=2  --no-install-recommends -m mate-applet-brisk-menu
+
 logger -t devvm "Mate Desktop installed. $?"
 
 echo mate-session >~/.xsession
