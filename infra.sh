@@ -33,6 +33,7 @@ sudo apt-get install -q=2  --no-install-recommends -m ubuntu-mate-core
 
 sudo apt-get install -q=2  --no-install-recommends -m ubuntu-mate-desktop
 
+# fixes issue with brisket menu error
 sudo apt-get install -q=2  --no-install-recommends -m mate-applet-brisk-menu
 
 logger -t devvm "Mate Desktop installed. $?"
@@ -58,6 +59,22 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt-get update
 
 sudo apt-get install -y code
+
+logger -t devvm "VSCode Installed: $?"
+
+logger -t devvm "Installing Docker: $?"
+
+#	Add Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+#	Setup stable repo
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+#	Update package index (again)
+sudo apt-get update
+
+#	Install latest version of Docker CE
+sudo apt-get install docker-ce -y
 
 logger -t devvm "VSCode Installed: $?"
 
